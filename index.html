@@ -86,14 +86,6 @@
         <source src="song.mp3" type="audio/mpeg">
     </audio>
 
-    <script>
-        // La música no puede empezar sola por políticas de los navegadores.
-        // Se activa al hacer el primer clic en la pantalla.
-        document.body.addEventListener('click', function() {
-            var audio = document.getElementById('audio-player');
-            audio.play();
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
