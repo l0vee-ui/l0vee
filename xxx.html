@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio | @l0vee__</title>
+    <style>
+        /* Reset de estilos */
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', Courier, monospace;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Fondo de video */
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(40%) grayscale(50%); /* Ajusta el look */
+            object-fit: cover;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 { font-size: 1.5rem; letter-spacing: 5px; margin-bottom: 10px; text-transform: uppercase; }
+        p { font-size: 0.8rem; color: #888; margin-bottom: 20px; }
+
+        /* Enlaces */
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .links a:hover { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+
+        /* Reproductor invisible/música */
+        #audio-player { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Video de fondo (usa un link directo a un .mp4) -->
+    <video autoplay muted loop id="video-background">
+        <source src="video_2026-05-01_17-19-51.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+        <h1>L0vee</h1>
+        <p>"Tu frase favorita o estado aquí"</p>
+        
+        <div class="links">
+            <a href="#">Discord</a>
+            <a href="#">Instagram</a>
+            <a href="#">GitHub</a>
+        </div>
+
+        <!-- Instrucción para la música -->
+        <p style="margin-top: 20px; font-size: 0.6rem;">Haga clic en cualquier lugar para reproducir audio</p>
+    </div>
+
+    <!-- Audio (Usa un link directo de Dropbox o Discord) -->
+    <audio id="audio-player" loop>
+        <source src="4 Morant (Better Luck Next Time) [L0zed4pqLFk].mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // La música no puede empezar sola por políticas de los navegadores.
+        // Se activa al hacer el primer clic en la pantalla.
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('audio-player');
+            audio.play();
+        });
+    </script>
+
+</body>
+</html>
